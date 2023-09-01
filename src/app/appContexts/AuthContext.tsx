@@ -6,11 +6,17 @@ interface LoginDetails {
     success: boolean
     data: {}
 }
+interface Auth {
+    user: {}
+    loggedIn: boolean
+    login(): void
+    logout(): void
+}
 
-const AuthContext = createContext({})
+const AuthContext = createContext<Auth | {}>({})
 
-const AuthProvider = ({ children } : {children: ReactNode}) => {
-    const [loginDetails, setLoginDetails] = useState<LoginDetails>()
+const AuthProvider = ({ children }: { children: ReactNode }) => {
+    const [loginDetails, setLoginDetails] = useState<LoginDetails | null>()
     const [loggedIn, setLoggedIn] = useState<boolean | undefined>(loginDetails?.success)
 
     const { push, replace } = useRouter()
