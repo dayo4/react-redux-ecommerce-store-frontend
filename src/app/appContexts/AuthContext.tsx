@@ -1,19 +1,19 @@
-import React, { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, ReactNode, useEffect, useState } from "react";
+import { usePathname, useRouter } from 'next/navigation';
 import Cookies from "js-cookie";
 
 interface LoginDetails {
     success: boolean
-    data: any
+    data: {}
 }
 
 const AuthContext = createContext({})
 
-const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children } : {children: ReactNode}) => {
     const [loginDetails, setLoginDetails] = useState<LoginDetails>()
-    const [loggedIn, setLoggedIn] = useState<boolean | any>(loginDetails?.success)
+    const [loggedIn, setLoggedIn] = useState<boolean | undefined>(loginDetails?.success)
 
-    const navigate = useNavigate();
+    const { push, replace } = useRouter()
 
     useEffect(() => {
         login()
@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
         setLoginDetails(() => {
             return null
         })
-        navigate('/')
+        push('/')
     }
 
     function login() {
@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
             setLoggedIn((prevState) => {
                 return true
             })
-            navigate('/dashboard', { replace: true })
+            replace('/dashboard')
         }
         else {
             setLoggedIn((prevState) => {
