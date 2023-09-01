@@ -2,11 +2,16 @@ import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
+interface LoginDetails {
+    success: boolean
+    data: any
+}
+
 const AuthContext = createContext({})
 
 const AuthProvider = ({ children }) => {
-    const [loginDetails, setLoginDetails] = useState()
-    const [loggedIn, setLoggedIn] = useState(loginDetails?.success)
+    const [loginDetails, setLoginDetails] = useState<LoginDetails>()
+    const [loggedIn, setLoggedIn] = useState<boolean | any>(loginDetails?.success)
 
     const navigate = useNavigate();
 
@@ -16,10 +21,10 @@ const AuthProvider = ({ children }) => {
 
     function logout() {
         Cookies.remove("loginDetails")
-        setLoggedIn((prevState) => {
+        setLoggedIn(() => {
             return false
         })
-        setLoginDetails((prevState) => {
+        setLoginDetails(() => {
             return null
         })
         navigate('/')
