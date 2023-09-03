@@ -21,9 +21,9 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const { push, replace } = useRouter()
 
-    useEffect(() => {
-        login()
-    }, [loggedIn]);
+    // useEffect(() => {
+        // login()
+    // }, [loggedIn]);
 
     function logout() {
         Cookies.remove("loginDetails")
