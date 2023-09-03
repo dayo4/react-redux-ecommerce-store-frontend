@@ -1,22 +1,22 @@
 import React, { createContext, ReactNode, useEffect, useState } from "react";
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Cookies from "js-cookie";
 
 interface LoginDetails {
     success: boolean
     data: {}
 }
-interface Auth {
+interface AuthContext {
     user: {}
     loggedIn: boolean
     login(): void
     logout(): void
 }
 
-const AuthContext = createContext<Auth | {}>({})
+const AuthContext = createContext<AuthContext | {}>({})
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
-    const [loginDetails, setLoginDetails] = useState<LoginDetails | null>()
+    const [loginDetails, setLoginDetails] = useState<LoginDetails | null>(null)
     const [loggedIn, setLoggedIn] = useState<boolean | undefined>(loginDetails?.success)
 
     const { push, replace } = useRouter()
