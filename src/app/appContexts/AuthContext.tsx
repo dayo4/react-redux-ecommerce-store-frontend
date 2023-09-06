@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, useContext, ReactNode, useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import Cookies from "js-cookie";
 
@@ -15,14 +15,14 @@ interface AuthContext {
 
 const AuthContext = createContext<AuthContext | {}>({})
 
-const AuthProvider = ({ children }: { children: ReactNode }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [loginDetails, setLoginDetails] = useState<LoginDetails | null>(null)
     const [loggedIn, setLoggedIn] = useState<boolean | undefined>(loginDetails?.success)
 
     const { push, replace } = useRouter()
 
     // useEffect(() => {
-        // login()
+    // login()
     // }, [loggedIn]);
 
     function logout() {
@@ -64,4 +64,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     )
 };
 
-export { AuthContext, AuthProvider };
+export const useAuth = () => {
+    return useContext(AuthContext)
+}
