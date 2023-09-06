@@ -15,7 +15,7 @@ interface AuthContext {
     logout(): void
 }
 
-const AuthContext = createContext<AuthContext | {}>({})
+export const AuthContext = createContext<AuthContext | {}>({})
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [loginDetails, setLoginDetails] = useState<LoginDetails | null>(null)
@@ -66,6 +66,3 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     )
 };
 
-export const useAuth = () => {
-    return useContext(AuthContext)
-}
