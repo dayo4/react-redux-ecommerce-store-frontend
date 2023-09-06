@@ -15,9 +15,9 @@ interface AuthContext {
     logout(): void
 }
 
-const AuthContext = createContext<AuthContext | {}>({})
+// const AuthContext = createContext<AuthContext | {}>({})
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
+export const useAuth = () => {
     const [loginDetails, setLoginDetails] = useState<LoginDetails | null>(null)
     const [loggedIn, setLoggedIn] = useState<boolean | undefined>(loginDetails?.success)
 
@@ -57,15 +57,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         }
     }
 
-    return (
-        <AuthContext.Provider
-            value={{ user: loginDetails?.data, loggedIn, login, logout }}
-        >
-            {children}
-        </AuthContext.Provider>
-    )
+    return { user: loginDetails?.data, loggedIn, login, logout }
+    // return (
+    //     <AuthContext.Provider
+    //         value={{ user: loginDetails?.data, loggedIn, login, logout }}
+    //     >
+    //         {children}
+    //     </AuthContext.Provider>
+    // )
 };
 
-export const useAuth = () => {
-    return useContext(AuthContext)
-}
+// export const useAuth = () => {
+//     return useContext(AuthContext)
+// }
