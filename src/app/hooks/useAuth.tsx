@@ -57,6 +57,6 @@ export const useAuth = () => {
         }
     }
 
-    return { user: loginDetails?.data, loggedIn, login, logout }
+    return { user: 'loginDetails?.data', loggedIn, login, logout }
     // return useContext(AuthContext)
 };
