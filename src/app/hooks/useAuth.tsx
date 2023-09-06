@@ -1,10 +1,8 @@
 'use client';
 
-import React, { useContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, useContext, ReactNode, useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import Cookies from "js-cookie";
-
-// import { AuthContext } from '@/app/contexts/AuthContext'
 
 interface LoginDetails {
     success: boolean
@@ -17,7 +15,9 @@ interface AuthContext {
     logout(): void
 }
 
-export const useAuth = () => {
+const AuthContext = createContext<AuthContext | {}>({})
+
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [loginDetails, setLoginDetails] = useState<LoginDetails | null>(null)
     const [loggedIn, setLoggedIn] = useState<boolean | undefined>(loginDetails?.success)
 
@@ -57,6 +57,15 @@ export const useAuth = () => {
         }
     }
 
-    return { user: 'loginDetails?.data', loggedIn, login, logout }
-    // return useContext(AuthContext)
+    return (
+        <AuthContext.Provider
+            value={{ user: loginDetails?.data, loggedIn, login, logout }}
+        >
+            {children}
+        </AuthContext.Provider>
+    )
 };
+
+export const useAuth = () => {
+    return useContext(AuthContext)
+}
