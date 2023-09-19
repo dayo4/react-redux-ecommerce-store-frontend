@@ -44,7 +44,7 @@ const counterSlice = createSlice({
 })
 
 export const counterReducer =  counterSlice.reducer;
-export const {
+export const  {
   increment,
   incrementByAmount,
   decrement
