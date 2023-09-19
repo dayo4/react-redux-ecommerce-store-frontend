@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import { AuthProvider } from '@/app/contexts/AuthContext'
-import { StoreProvider } from '@/redux'
+import { StoreProvider } from '@/redux/provider'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {} from '@/redux'
 
 export default function Home() {
   return (

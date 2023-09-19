@@ -9,7 +9,7 @@ const initialState: CounterSliceState = {
   status: 'idle',
 }
 
-export const counterSlice = createSlice({
+const counterSlice = createSlice({
   name: 'counter',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
@@ -42,6 +42,13 @@ export const counterSlice = createSlice({
 //       })
 //   },
 })
+
+export const counterReducer =  counterSlice.reducer;
+export const {
+  increment,
+  incrementByAmount,
+  decrement
+} = counterSlice.actions
 
 /* Types */
 export interface CounterSliceState {
