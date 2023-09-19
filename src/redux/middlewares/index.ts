@@ -1,7 +1,8 @@
 /* Core */
 // import { createLogger } from 'redux-logger'
+import { userApi } from "../queries/userApi";
 
-const middleware = [
+const middleware = [userApi.middleware
 //   createLogger({
 //     duration: true,
 //     timestamp: false,
