@@ -28,7 +28,9 @@ export default function RootLayout({
           <TopNav></TopNav>
           <SideNav></SideNav>
 
-          {children}
+          <main className="flex min-h-screen m-10">
+            {children}
+          </main>
 
         </StoreProvider>
       </body>

@@ -3,8 +3,8 @@ export const TopNav = ({
     // children,
  }: TopNavProps) => {
     return (
-       <div>
- 
+       <div className="h-[65px]">
+         
        </div>
     )
  }
