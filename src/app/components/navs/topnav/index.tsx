@@ -1,7 +1,14 @@
-export const TopNav = () => {
-    return (
-        <div>
 
-        </div>
+export const TopNav = ({
+    // children,
+ }: TopNavProps) => {
+    return (
+       <div>
+ 
+       </div>
     )
-}
+ }
+ 
+ interface TopNavProps {
+    // children: React.ReactNode
+ }

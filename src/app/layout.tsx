@@ -4,8 +4,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-// import { AuthProvider } from '@/app/contexts/AuthContext'
 import { StoreProvider } from '@/redux/provider'
+import { SideNav, TopNav } from './components/navs'
 // import { useSelector } from '@/redux'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -24,9 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StoreProvider>
-          {/* <AuthProvider> */}
-            {children}
-          {/* </AuthProvider> */}
+
+          <TopNav></TopNav>
+          <SideNav></SideNav>
+
+          {children}
+
         </StoreProvider>
       </body>
     </html>
