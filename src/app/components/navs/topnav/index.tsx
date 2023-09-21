@@ -12,10 +12,10 @@ export const TopNav = ({
 }: TopNavProps) => {
    return (
       <div className="flex justify-between align-middle h-[65px] border-b-2 border-my-pri-color">
-         <Image src={Logo} alt='Store logo' width={162} height={31.05} className="ml-5"></Image>
+         <Image src={Logo} alt='Store logo' width={162} height={31.05} className="ml-12"></Image>
          <div className="">
             {/* <label  className="text-sm text-navy-700 dark:text-white font-bold">Default</label> */}
-            <input type="search" placeholder="Search" className="mt-2 flex h-11 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-lg outline-none border-gray-400" />
+            <input type="search" placeholder="Search" className="mt-2 flex h-11 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-lg outline-none border-gray-300" />
          </div>
          <div className='flex mx-4'>
             <Image src={PhoneIcon} alt="Phone Icon" className='mr-5 cursor-pointer' height={22}></Image>

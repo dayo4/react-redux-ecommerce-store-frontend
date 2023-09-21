@@ -22,15 +22,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className + 'bg-white'}>
         <StoreProvider>
 
           <TopNav></TopNav>
-          <SideNav></SideNav>
+          
+          <div className='flex '>
+            <SideNav></SideNav>
 
-          <main className="flex min-h-screen m-10">
-            {children}
-          </main>
+            <main className="flex m-10">
+              {children}
+            </main>
+          </div>
+
 
         </StoreProvider>
       </body>
