@@ -1,3 +1,4 @@
+import { Button } from "../../materials";
 
 export const PriSectionHeader = ({
     title,
@@ -9,7 +10,10 @@ export const PriSectionHeader = ({
             <h1 className="font-bold text-[18px]">
                 {title}
             </h1>
-            <div className="">{extra}</div>
+            <div className="">
+                <Button>Button</Button>
+                {extra}
+            </div>
         </div>
     )
 }
