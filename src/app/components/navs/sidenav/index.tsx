@@ -26,7 +26,7 @@ export const SideNav = ({ }: SideNavProps) => {
    ]
 
    return (
-      <aside className="flex justify-center h-full min-w-[260px] border-r-2 border-my-pri-color">
+      <aside className="flex justify-center h-full min-w-[240px] border-r-2 border-my-pri-color">
 
          <div className="mt-14">
             <h1 className="font-bold text-[24px] mb-6">Explore</h1>
