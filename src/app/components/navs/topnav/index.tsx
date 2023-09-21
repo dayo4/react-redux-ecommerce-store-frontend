@@ -12,9 +12,9 @@ export const TopNav = ({
       <div className="flex justify-between align-middle h-[65px] border-b-2 border-my-pri-color">
          {/* <div className=''> */}
             <Image src={Logo} alt='Reni store logo' width={162} height={31.05}></Image>
-            <div className="mb-3">
+            <div className="">
                 {/* <label  className="text-sm text-navy-700 dark:text-white font-bold">Default</label> */}
-                <input type="search" placeholder="search" className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"/>
+                <input type="search" placeholder="search" className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-lg outline-none border-gray-700"/>
             </div>
          {/* </div> */}
          <Icon className=""
