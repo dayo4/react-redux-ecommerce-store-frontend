@@ -31,6 +31,7 @@ export default function RootLayout({
             <SideNav></SideNav>
 
             <main className="ml-7 mr-10 mt-12 border-4 w-full">
+              
               {children}
             </main>
           </div>
