@@ -1,14 +1,20 @@
 
 export const PriSectionHeader = ({
-    title
+    title,
+    extra
 }: PriSectionHeaderProps) => {
     return (
-        <div>
-            {title}
+        <div className="flex align-middle justify-between relative my-2 text-my-sec-text-color">
+            <i className="absolute -top-2 left-0 h-[3px] w-36 br bg-gradient-to-r rounded-full from-my-pri-color to-transparent"></i>
+            <h1 className="font-bold text-[18px]">
+                {title}
+            </h1>
+            <div className="">{extra}</div>
         </div>
     )
 }
 
 interface PriSectionHeaderProps {
     title: string
+    extra?: any
 }

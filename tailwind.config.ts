@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors:{
         "my-pri-color": '#3690FF',
-        "my-text-color": '#000000',
+        "my-pri-text-color": '#000000',
+        "my-sec-text-color": '#61626D',
       }
       // backgroundImage: {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
