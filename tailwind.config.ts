@@ -13,6 +13,9 @@ const config: Config = withMT({
         "my-pri-color": '#3690FF',
         "my-pri-text-color": '#000000',
         "my-sec-text-color": '#61626D',
+      },
+      backgroundImage: {
+        'home-hero': "url('/src/assets/imgs/hero-bg.png')",
       }
       // backgroundImage: {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

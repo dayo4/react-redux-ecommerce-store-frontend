@@ -34,7 +34,7 @@ export const SideNav = ({ }: SideNavProps) => {
                {NavLinks.map((link, i) => {
                   return (
                      <Link href={link.href} className="flex pr-4 py-2 mb-2 font-[500]" key={i}>
-                        <Image src={link.icon} alt={link.title} className='mr-4' height={22}></Image>
+                        <Image src={link.icon} alt={link.title} className='mr-4' height={22} width={22}></Image>
                         <span>{link.title}</span>
                      </Link>
                   )
