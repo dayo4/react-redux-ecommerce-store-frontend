@@ -18,11 +18,16 @@ body {
   overflow: hidden;
 } */
 
-main {
-  /* overflow-y: scroll !important; */
-  /* height: 100vh; */
-  margin-top: calc(65px /* topnav-height */ + 0px );
-  padding: 40px;
+.MainContainer {
+scrollbar-width: 5px;
+scrollbar-color: transparent transparent;
+}
+.MainContainer::-webkit-scrollbar {
+width: 5px;
+border-radius: 28px;
+}
+.MainContainer::-webkit-scrollbar-thumb {
+background-color: transparent;
 }
 
 .HeroBg {

@@ -1,4 +1,4 @@
-// import { Button } from "../../materials";
+// import { Button } from "@/app/components/materials";
 
 export const PriSectionHeader = ({
     title,

@@ -22,9 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + 'bg-white overflow-hidden'}>
+      <body className={inter.className + 'bg-white overflow-hidden p-0 m-0'}>
 
-        <div className='overflow-y-scroll'>
+        <div className='MainContainer lg:ml-[220px] h-screen mt-[65px] px-7 overflow-y-auto'>
           <StoreProvider>
 
             <TopNav></TopNav>
