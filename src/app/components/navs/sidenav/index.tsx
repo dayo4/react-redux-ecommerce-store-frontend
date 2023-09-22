@@ -26,10 +26,10 @@ export const SideNav = ({ }: SideNavProps) => {
    ]
 
    return (
-      <aside className="flex justify-center h-full min-w-[240px] border-r-2 border-my-pri-color">
+      <aside className="hidden lg:flex justify-center h-full min-w-[240px] absolute top-0 left-0 bg-white pt-[65px] z-[100] border-r-2 border-my-pri-color">
 
          <div className="mt-14">
-            <h1 className="font-bold text-[24px] mb-6">Explore</h1>
+            <h1 className="font-bold text-[24px] mb-6 text-my-pri-text-color">Explore</h1>
             <div className="">
                {NavLinks.map((link, i) => {
                   return (

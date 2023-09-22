@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --topnav-height: '65px'
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +15,23 @@
 }
 
 body {
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+  /* width: calc(100vw); */
+  overflow: hidden;
+}
+
+main {
+  overflow-y: scroll !important;
+  /* height: 100vh; */
+  margin-top: calc(65px /* topnav-height */ + 0px );
+  padding: 40px;
+}
+
+.HeroBg {
+  background-color: #B0D3FF;
+  background-image: url(/img/hero-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
 }

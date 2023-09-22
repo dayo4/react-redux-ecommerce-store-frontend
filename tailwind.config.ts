@@ -1,5 +1,5 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
 import type { Config } from 'tailwindcss'
+const withMT = require("@material-tailwind/react/utils/withMT");
 
 const config: Config = withMT({
   content: [
@@ -11,17 +11,12 @@ const config: Config = withMT({
     extend: {
       colors:{
         "my-pri-color": '#3690FF',
-        "my-pri-text-color": '#000000',
+        "my-pri-text-color": '#03372A',
         "my-sec-text-color": '#61626D',
       },
-      backgroundImage: {
-        'home-hero': "url('/src/assets/imgs/hero-bg.png')",
-      }
       // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
+      //   'home-hero': `url(/hero-bg.png)`,
+      // }
     },
   },
   plugins: [],

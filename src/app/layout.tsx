@@ -26,15 +26,15 @@ export default function RootLayout({
         <StoreProvider>
 
           <TopNav></TopNav>
-          
-          <div className='flex '>
             <SideNav></SideNav>
+          
 
-            <main className="ml-7 mr-10 mt-12 border-4 w-full">
+            <main className="border-4">
+          {/* <div className='MainInnerContainer '> */}
               
               {children}
+          {/* </div> */}
             </main>
-          </div>
 
 
         </StoreProvider>
