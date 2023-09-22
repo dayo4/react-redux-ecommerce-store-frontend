@@ -13,14 +13,13 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+/* 
 body {
-  /* width: calc(100vw); */
   overflow: hidden;
-}
+} */
 
 main {
-  overflow-y: scroll !important;
+  /* overflow-y: scroll !important; */
   /* height: 100vh; */
   margin-top: calc(65px /* topnav-height */ + 0px );
   padding: 40px;

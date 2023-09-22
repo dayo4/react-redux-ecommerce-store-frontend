@@ -22,22 +22,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + 'bg-white'}>
-        <StoreProvider>
+      <body className={inter.className + 'bg-white overflow-hidden'}>
 
-          <TopNav></TopNav>
+        <div className='overflow-y-scroll'>
+          <StoreProvider>
+
+            <TopNav></TopNav>
             <SideNav></SideNav>
-          
+
 
             <main className="border-4">
-          {/* <div className='MainInnerContainer '> */}
-              
+              {/* <div className='MainInnerContainer '> */}
+
               {children}
-          {/* </div> */}
+              {/* </div> */}
             </main>
 
+          </StoreProvider>
+        </div>
 
-        </StoreProvider>
       </body>
     </html>
   )
