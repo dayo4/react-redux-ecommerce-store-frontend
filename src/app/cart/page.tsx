@@ -230,7 +230,9 @@ export default function Reviews() {
                     </CardBody>
                     <CardFooter className='flex justify-center'>
                         <Button variant="filled" className="mb-2 bg-my-pri-color rounded-md">
-                            Process to checkout
+                            <Link href={"/cart/checkout"} >
+                                Process to checkout
+                            </Link>
                         </Button>
                     </CardFooter>
                 </Card>
