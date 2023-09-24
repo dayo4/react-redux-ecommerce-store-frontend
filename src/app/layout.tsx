@@ -31,7 +31,7 @@ export default function RootLayout({
             <SideNav></SideNav>
 
 
-            <main className="">
+            <main className="h-full">
               {children}
             </main>
 
