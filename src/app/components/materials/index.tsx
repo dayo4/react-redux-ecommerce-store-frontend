@@ -13,5 +13,9 @@ export {
     Avatar,
     IconButton,
     Tooltip,
+    Checkbox,
+    Alert,
+    Radio,
+    Breadcrumbs
 }
     from "@material-tailwind/react";
