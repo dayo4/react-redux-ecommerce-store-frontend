@@ -5,7 +5,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { } from '@/redux'
-import { PriSectionHeader } from '@/app/components/headers'
+import { PriSectionHeader, TopBreadcrumb } from '@/app/components/headers'
 import {
     Rating,
     Input,
@@ -26,37 +26,12 @@ import {
 
 export default function Reviews() {
 
-    const TABLE_HEAD = ["Product", "Price", "Quantity", "Action", "Subtotal"];
-
-    const TABLE_ROWS = [
-        {
-            img: "/img/item1.png",
-            name: "Custom Gown",
-            price: "$2,500",
-            quantity: "2",
-            action: "Delete",
-            subtotal: "$5,000",
-        },
-        {
-            img: "/img/item1.png",
-            name: "Custom Gown",
-            price: "$2,500",
-            quantity: "2",
-            action: "Delete",
-            subtotal: "$5,000",
-        },
-        {
-            img: "/img/item1.png",
-            name: "Custom Gown",
-            price: "$2,500",
-            quantity: "2",
-            action: "Delete",
-            subtotal: "$5,000",
-        },
-    ];
-
     return (
         <div>
+            <TopBreadcrumb links={[
+                {title: "Settings", href: "/settings"},
+                {title: "Profile", href: "/profile"},
+            ]} />
 
             <div className='flex justify-center'>
                 <div className='p-3 basis-11/12 md:basis-10/12'>
@@ -68,19 +43,19 @@ export default function Reviews() {
                     <section className=''>
                         <div className='flex flex-wrap justify-between'>
                             <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
+                                <h3 className='font-bold mb-2 text-gray-600'>First Name</h3>
                                 <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
                             </div>
                             <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
+                                <h3 className='font-bold mb-2 text-gray-600'>First Name</h3>
                                 <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
                             </div>
                             <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
+                                <h3 className='font-bold mb-2 text-gray-600'>First Name</h3>
                                 <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
                             </div>
                             <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
+                                <h3 className='font-bold mb-2 text-gray-600'>First Name</h3>
                                 <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
                             </div>
                         </div>
