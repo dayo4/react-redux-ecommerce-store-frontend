@@ -5,7 +5,13 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { } from '@/redux'
-import { PriSectionHeader } from '@/app/components/headers'
+import MastercardIcon from '@/assets/icons/pay/mastercard.svg';
+import VisaIcon from '@/assets/icons/pay/visa.svg';
+import BkashIcon from '@/assets/icons/pay/bkash.svg';
+import NagadIcon from '@/assets/icons/pay/nagad.svg';
+
+import { TopBreadcrumb } from '@/app/components/headers'
+import BillingComponent from '@/app/components/profile/billing'
 import {
     Rating,
     Input,
@@ -20,97 +26,104 @@ import {
     Avatar,
     IconButton,
     Tooltip,
+    Radio,
 } from "@/app/components/materials";
 
 
 
-export default function Reviews() {
-
-    const TABLE_HEAD = ["Product", "Price", "Quantity", "Action", "Subtotal"];
-
-    const TABLE_ROWS = [
-        {
-            img: "/img/item1.png",
-            name: "Custom Gown",
-            price: "$2,500",
-            quantity: "2",
-            action: "Delete",
-            subtotal: "$5,000",
-        },
-        {
-            img: "/img/item1.png",
-            name: "Custom Gown",
-            price: "$2,500",
-            quantity: "2",
-            action: "Delete",
-            subtotal: "$5,000",
-        },
-        {
-            img: "/img/item1.png",
-            name: "Custom Gown",
-            price: "$2,500",
-            quantity: "2",
-            action: "Delete",
-            subtotal: "$5,000",
-        },
-    ];
+export default function Checkout() {
 
     return (
         <div>
+            <TopBreadcrumb links={[
+                {title: "Cart", href: "/cart"},
+                {title: "Checkout", href: "/cart/checkout"},
+            ]} />
 
-            <div className='flex justify-center'>
-                <div className='p-3 basis-11/12 md:basis-10/12'>
-                    <section className='flex justify-between my-4'>
-                        <span></span>
-                        <span className='font-[500]'>Welcome! <span className='text-my-pri-color'>Olayinka</span></span>
-                    </section>
+            <div className='flex flex-wrap justify-center lg:justify-between'>
+                <section className='p-3 basis-11/12 lg:basis-5/12'>
+                    <BillingComponent />
+                </section>
 
-                    <section className=''>
-                        <div className='flex flex-wrap justify-between'>
-                            <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
-                                <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                <section className='p-3 basis-11/12 lg:basis-5/12'>
+                    <Card className='basis-11/12 sm:basis-9/12 md:basis-5/12 xl:basis-4/12 border-[1px] border-[#cacaca] font-[500]'>
+                        <CardHeader className='text-' floated={false} shadow={false}>
+                            <div className="flex justify-between align-middle px-1">
+                                <div className="flex items-center gap-3">
+                                    <Image
+                                        src={"/img/item1.png"}
+                                        alt={""}
+                                        height={20}
+                                        width={40}
+                                        className="p-1"
+                                    />
+                                    <Typography
+                                        variant="small"
+                                        color="blue-gray"
+                                        className="font-bold"
+                                    >
+                                        Joli Dress
+                                    </Typography>
+                                </div>
+                                <div>
+                                    $1750
+                                </div>
                             </div>
-                            <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
-                                <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                            <hr className='mt-7' />
+                        </CardHeader>
+                        <CardBody>
+                            <p className='flex justify-between border-b-2 py-2'>
+                                <span>Subtotal:</span>
+                                <span>$1750</span>
+                            </p>
+                            <p className='flex justify-between border-b-2 py-2'>
+                                <span>Shipping:</span>
+                                <span>Free</span>
+                            </p>
+                            <p className='flex justify-between border-b-2 py-2 font-bold'>
+                                <span>Total:</span>
+                                <span>$1750</span>
+                            </p>
+                        </CardBody>
+                        <CardFooter className=''>
+                            <div className='flex justify-between align-middle'>
+                                <Radio name='payment' label={
+                                    <Typography className="font-medium">
+                                        Bank
+                                    </Typography>
+                                } />
+                                <div>
+                                    <Tooltip content="Master Card">
+                                        <Button variant='text' className='mr-1 p-1'>
+                                            <Image src={MastercardIcon} alt="Payment logo" height={40} width={30}></Image>
+                                        </Button>
+                                    </Tooltip>
+                                    <Tooltip content="Visa Card">
+                                        <Button variant='text' className='mr-1 p-1'>
+                                            <Image src={VisaIcon} alt="Payment logo" height={40} width={30}></Image>
+                                        </Button>
+                                    </Tooltip>
+                                </div>
                             </div>
-                            <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
-                                <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                            <div>
+                                <Radio name='payment' label={
+                                    <Typography className="font-medium">
+                                        Cash On Delivery
+                                    </Typography>
+                                } />
                             </div>
-                            <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <h3 className='font-bold mb-2'>First Name</h3>
-                                <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
-                            </div>
-                        </div>
 
-                        <hr className='my-8' />
 
-                        <div className='flex flex-wrap justify-between'>
-                            <h3 className='basis-full font-bold mb-4'>Password Changes</h3>
-                            <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <Input variant='standard' label='Old Password' autoComplete='false' type='password' className='w-full bg-[#F5F5F5] pl-2' />
-                            </div>
-                            <div className='basis-full sm:basis-10/12 lg:basis-5/12 mb-8'>
-                                <Input variant='standard' label='New Password' autoComplete='false' type='password' className='w-full bg-[#F5F5F5] pl-2' />
-                            </div>
-                        </div>
-
-                        <div className='flex justify-between'>
-                            <div></div>
-                            <div className='mb-6'>
-                                <Button variant="text" className="mb-2 rounded-md mr-3">
-                                    Cancel
-                                </Button>
+                            <div className='flex justify-center mt-10'>
                                 <Button variant="filled" className="mb-2 bg-my-pri-color rounded-md">
-                                    Save Changes
+                                    <Link href={"/cart/checkout"} >
+                                        Place Order
+                                    </Link>
                                 </Button>
                             </div>
-                        </div>
-
-                    </section>
-                </div>
+                        </CardFooter>
+                    </Card>
+                </section>
             </div>
         </div>
     )
