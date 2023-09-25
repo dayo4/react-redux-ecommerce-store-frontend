@@ -30,10 +30,16 @@ export const TopNav = ({
                icon={<Icon path={mdiMagnify} className='cursor-pointer' size={1.1} />}
             />
          </div>
-         <div className='flex mx-4'>
-            <Image src={PhoneIcon} alt="Phone Icon" className='mr-6 cursor-pointer' height={22}></Image>
-            <Image src={NavCartIcon} alt="NavCart Icon" className='mr-6 cursor-pointer' height={26}></Image>
-            <Image src={FunnelMenuIcon} alt="Menu Icon" className='mr-6 cursor-pointer' height={30}></Image>
+         <div className='flex align-middle mx-4'>
+            <IconButton variant='text' className='mr-6'>
+               <Image src={PhoneIcon} alt="Phone Icon" height={22}></Image>
+            </IconButton>
+            <IconButton variant='text' className='mr-6'>
+               <Image src={NavCartIcon} alt="NavCart Icon" height={26}></Image>
+            </IconButton>
+            <IconButton variant='text' className='mr-6'>
+               <Image src={FunnelMenuIcon} alt="Menu Icon" height={30}></Image>
+            </IconButton>
          </div>
       </div>
    )
