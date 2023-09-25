@@ -5,7 +5,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { } from '@/redux'
-import { PriSectionHeader } from '@/app/components/headers'
+import { PriSectionHeader, TopBreadcrumb } from '@/app/components/headers'
 import {
     Rating,
     Input,
@@ -57,6 +57,10 @@ export default function Reviews() {
 
     return (
         <div>
+            <TopBreadcrumb links={[
+                {title: "Cart", href: "/cart"},
+            ]} />
+
             <Card className="">
                 {/* <CardHeader floated={false} shadow={false} className="rounded-none">
                 <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
@@ -223,7 +227,7 @@ export default function Reviews() {
                             <span>Shipping:</span>
                             <span>Free</span>
                         </p>
-                        <p className='flex justify-between border-b-2 py-2'>
+                        <p className='flex justify-between border-b-2 font-bold py-2'>
                             <span>Total:</span>
                             <span>$1750</span>
                         </p>
