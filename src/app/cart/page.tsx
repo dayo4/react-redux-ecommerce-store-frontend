@@ -5,7 +5,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { } from '@/redux'
-import { PriSectionHeader, TopBreadcrumb } from '@/app/components/headers'
+import { PriSectionHeader, TopBreadcrumb } from '@/app/components/utils'
 import {
     Rating,
     Input,
@@ -154,7 +154,7 @@ export default function Reviews() {
                                                 </Typography>
                                             </td>
                                             <td className={classes}>
-                                                <input className='w-[60px] text-center border-[1px] border-[#cacaca] p-1 rounded-md focus:outline-my-pri-color' type={'number'}></input>
+                                                <input className='w-[60px] text-center border-[1px] border-[#cacaca] p-1 rounded-md focus:outline-my-pri-color' type={'number'} min={0}></input>
                                             </td>
                                             <td className={classes}>
                                                 <Tooltip content="Detele Item">
