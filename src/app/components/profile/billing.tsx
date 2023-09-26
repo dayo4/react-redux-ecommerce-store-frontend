@@ -7,7 +7,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { } from '@/redux'
-import { PriSectionHeader } from '@/app/components/headers'
+import { PriSectionHeader } from '@/app/components/utils'
 import {
     Rating,
     Input,
