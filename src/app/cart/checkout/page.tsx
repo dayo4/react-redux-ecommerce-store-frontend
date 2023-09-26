@@ -10,7 +10,7 @@ import VisaIcon from '@/assets/icons/pay/visa.svg';
 import BkashIcon from '@/assets/icons/pay/bkash.svg';
 import NagadIcon from '@/assets/icons/pay/nagad.svg';
 
-import { TopBreadcrumb } from '@/app/components/headers'
+import { TopBreadcrumb } from '@/app/components/utils'
 import BillingComponent from '@/app/components/profile/billing'
 import {
     Rating,
