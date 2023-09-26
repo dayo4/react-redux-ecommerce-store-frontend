@@ -2,6 +2,8 @@
 import { Button } from "@/app/components/materials";
 import Icon from '@mdi/react';
 import {
+   mdiArrowRight,
+   mdiArrowRightThin,
    mdiMenu
 } from '@mdi/js';
 import Image from 'next/image'
@@ -39,27 +41,24 @@ export const SideNav = ({ }: SideNavProps) => {
 
             <section className="mt-14">
                <h1 className="font-bold text-[24px] mb-6 text-my-pri-text-color">Explore</h1>
-               <div className="">
+               <div className="pb-12">
                   {NavLinks.map((link, i) => {
                      return (
 
-                        <Button variant="text" className="block w-full mb-2 capitalize " key={i}>
-                           <Link href={link.href}  className={(pathname === link.href ? "text-my-pri-color " : "")+" flex pr-4 font-[600]"} >
+                        <Button variant="text" className={(pathname === link.href ? "text-my-pri-color border-l-2 border-l-my-pri-color " : "")+" block w-full mb-2 capitalize overflow-hidden relative"} key={i}>
+                           <Link href={link.href}  className={"flex pr-4 font-[600]"} >
                               <Image src={link.icon} alt={link.title} className='mr-4' height={22} width={22}></Image>
                               <span className="mt-[3px]">{link.title}</span>
                            </Link>
+                           {/* <Icon path={mdiArrowRight} size={0.8} className="absolute top-[30%] -left-[6px]"></Icon> */}
                         </Button>
                      )
                   })}
                </div>
+               {/* <div className="pb-12"></div> */}
             </section>
 
          </div>
-         {/* <div className='flex mx-4'> */}
-         {/* </div> */}
-         {/* <Icon className=""
-         path={mdiMenu}
-         size={1.1} /> */}
       </aside>
    )
 }
