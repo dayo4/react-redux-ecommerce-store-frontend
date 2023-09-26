@@ -18,7 +18,7 @@ export const TopNav = ({
    // children,
 }: TopNavProps) => {
    return (
-      <div className="flex justify-between align-middle h-[65px] absolute top-0 left-0 z-[200] bg-white w-full border-b-2 border-my-pri-color">
+      <div className="flex justify-between align-middle h-[65px] absolute top-0 left-0 z-[200] bg-white w-full border-b border-gray-200">
          <div className='flex justify-center align-middle w-[90px] lg:w-[132px] lg:h-[31px] lg:mt-3'>
             <img src={"/icons/logo.svg"} alt='Store logo' /* width={162} height={31.05} */ className="max-w-full max-h-full ml-8 sm:ml-12" />
          </div>

@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className + 'bg-white overflow-hidden p-0 m-0'}>
 
-        <div className='MainContainer lg:ml-[220px] h-[calc(100vh-65px)] mt-[65px] px-7 overflow-y-auto'>
+        <div className='MainContainer lg:ml-[200px] h-[calc(100vh-65px)] mt-[65px] px-7 overflow-y-auto'>
           <StoreProvider>
 
             <TopNav></TopNav>

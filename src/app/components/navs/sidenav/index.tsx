@@ -36,7 +36,7 @@ export const SideNav = ({ }: SideNavProps) => {
    ]
 
    return (
-      <aside className="hidden lg:block h-full min-w-[230px] absolute top-0 left-0 bg-white pt-[65px] z-[100] overflow-hidden border-r-2 border-my-pri-color">
+      <aside className="hidden lg:block h-full min-w-[210px] absolute top-0 left-0 bg-white pt-[65px] z-[100] overflow-hidden border-r border-gray-200">
          <div className='flex justify-center h-full overflow-y-scroll translate-x-[17px]'>
 
             <section className="mt-14">
