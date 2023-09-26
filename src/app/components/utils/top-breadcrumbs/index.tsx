@@ -34,14 +34,14 @@ export const TopBreadcrumb = ({
             <p
                 className="flex p-1"
             >
-                <Link href={"/"} className="px-1 py-1 font-medium text-gray-500 hover:text-my-pri-color">
-                    {<Icon path={mdiHomeOutline} size={1} />}
+                <Link href={"/"} className="px-1 font-medium text-gray-500 hover:text-my-pri-color">
+                    {<Icon path={mdiHomeOutline} size={0.95} />}
                 </Link>
                 {links.map((link, i) => {
                     return (
                         <div key={i}>
-                            <span className='text-2xl mx-1 text-gray-500'>/</span>
-                            <Link href={link.href} className="px-1 py-1 font-bold text-gray-500 hover:text-my-pri-color" key={i}>
+                            <span className='text-xl mx-1 text-gray-500'>/</span>
+                            <Link href={link.href} className="px-1 text-sm font-bold text-gray-500 hover:text-my-pri-color" key={i}>
                                 <span className=''>{link.title}</span>
                             </Link>
                         </div>

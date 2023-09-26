@@ -16,6 +16,12 @@ export {
     Checkbox,
     Alert,
     Radio,
-    Breadcrumbs
+    Breadcrumbs,
+    Textarea,
+    Badge,
+    Menu,
+    MenuHandler,
+    MenuList,
+    MenuItem
 }
     from "@material-tailwind/react";
