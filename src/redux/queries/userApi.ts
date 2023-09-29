@@ -1,8 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { user } from "@/redux/dummy";
 
 type User = {
   id: number;
-  name: string;
+  fname: string;
+  lname: string;
+  phone: string;
   email: number;
 };
 
@@ -12,8 +15,8 @@ export const userApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
     headers: {
-        'Authorization': 'Bearer ' + process.env.NEXT_PUBLIC_APPTOKEN
-    }
+      Authorization: "Bearer " + process.env.NEXT_PUBLIC_APPTOKEN,
+    },
   }),
   endpoints: (builder) => ({
     getUsers: builder.query<User[], null>({
@@ -24,9 +27,9 @@ export const userApi = createApi({
     }),
     loginUser: builder.query<User, { id: string }>({
       query: (userData) => ({
-        url: 'login',
-        method: 'POST',
-        body: userData
+        url: "login",
+        method: "POST",
+        body: userData,
       }),
     }),
   }),
