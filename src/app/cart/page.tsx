@@ -1,10 +1,14 @@
+'use client'
 import Icon from '@mdi/react';
 import {
-    mdiHeart, mdiHeartOutline, mdiMagnify, mdiStoreSearch, mdiTrashCan, mdiTrashCanOutline
+    mdiArrowLeft,
+    mdiArrowRight,
+    mdiHeart, mdiHeartOutline, mdiMagnify, mdiStoreSearch, mdiTrashCan, 
+    mdiTrashCanOutline
 } from '@mdi/js';
 import Image from 'next/image'
 import Link from 'next/link'
-import { } from '@/redux'
+import {  } from '@/redux'
 import { PriSectionHeader, TopBreadcrumb } from '@/app/components/utils'
 import {
     Rating,
@@ -21,10 +25,25 @@ import {
     IconButton,
     Tooltip,
 } from "@/app/components/materials";
+import { useState } from 'react';
 
 
 
 export default function Reviews() {
+    const [active, setActive] = useState(1);
+
+    const next = () => {
+        if (active === 10) return;
+
+        setActive(active + 1);
+    };
+
+    const prev = () => {
+        if (active === 1) return;
+
+        setActive(active - 1);
+    };
+
 
     const TABLE_HEAD = ["Product", "Price", "Quantity", "Action", "Subtotal"];
 
@@ -58,7 +77,7 @@ export default function Reviews() {
     return (
         <div>
             <TopBreadcrumb links={[
-                {title: "Cart", href: "/cart"},
+                { title: "Cart", href: "/cart" },
             ]} />
 
             <Card className="">
@@ -179,36 +198,30 @@ export default function Reviews() {
                         </tbody>
                     </table>
                 </CardBody>
-                <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Button variant="outlined" size="sm">
-                        Previous
-                    </Button>
-                    <div className="flex items-center gap-2">
-                        <IconButton variant="outlined" size="sm">
-                            1
+                <CardFooter className="flex justify-end border-t border-blue-gray-50 p-4">
+                    <div className="flex items-center gap-8">
+                        <IconButton
+                            size="sm"
+                            variant="outlined"
+                            onClick={prev}
+                            disabled={active === 1}
+                        >
+                            <Icon path={mdiArrowLeft} size={1} />
                         </IconButton>
-                        <IconButton variant="text" size="sm">
-                            2
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            3
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            ...
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            8
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            9
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            10
+                        <Typography color="gray" className="font-normal">
+                            Page <strong className="text-gray-900">{active}</strong> of{" "}
+                            <strong className="text-gray-900">10</strong>
+                        </Typography>
+                        <IconButton
+                            size="sm"
+                            variant="outlined"
+                            onClick={next}
+                            disabled={active === 1}
+                        >
+                            <Icon path={mdiArrowRight} size={1} />
                         </IconButton>
                     </div>
-                    <Button variant="outlined" size="sm">
-                        Next
-                    </Button>
+
                 </CardFooter>
             </Card>
 
