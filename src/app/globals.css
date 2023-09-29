@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --topnav-height: '65px'
+  --topnav-height: "65px";
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,23 +19,32 @@ body {
 } */
 
 .MainContainer {
-scrollbar-width: 5px;
-scrollbar-color: transparent transparent;
+  scrollbar-width: 5px;
+  scrollbar-color: transparent transparent;
 }
 .MainContainer::-webkit-scrollbar {
-width: 5px;
-border-radius: 28px;
+  width: 5px;
+  border-radius: 28px;
 }
 .MainContainer::-webkit-scrollbar-thumb {
-background-color: transparent;
+  background-color: transparent;
 }
 
 .HeroBg {
-  background-color: #B0D3FF;
+  background-color: #b0d3ff;
   background-image: url(/img/hero-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 280px;
   border-radius: 12px;
   overflow: hidden;
+}
+
+/* Control SideNav on smallscreens */
+.ShrinkOnSmallScreen {
+  max-width: 0px !important;
+}
+.ExpandOnSmallScreen {
+  min-width: 210px !important;
+  max-width: 210px !important;
 }
