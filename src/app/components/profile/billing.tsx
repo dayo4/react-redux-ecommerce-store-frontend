@@ -23,7 +23,8 @@ import {
     IconButton,
     Tooltip,
     Checkbox,
-    Alert
+    Alert,
+    Badge
 } from "@/app/components/materials";
 
 
@@ -33,15 +34,19 @@ export default function Checkout() {
     return (
         <div className=''>
             <div className='flex mb-10'>
-                <Button variant="filled" className="bg-my-pri-color w-28 rounded-md mr-3">
-                    Log In
-                </Button>
-                <Button variant="outlined" className="rounded-md w-28">
-                    Sign Up
-                </Button>
+                <Link href={'/login'}>
+                    <Button variant="filled" className="bg-my-pri-color w-28 rounded-md mr-3">
+                        Log In
+                    </Button>
+                </Link>
+                <Link href={'/register'}>
+                    <Button variant="outlined" className="rounded-md w-28">
+                        Sign Up
+                    </Button>
+                </Link>
             </div>
 
-            <h1 className='font-[500] text-4xl mb-8'>Billing Details</h1>
+            <h1 className='font-[500] text-3xl mb-8'>Billing Details</h1>
 
             <section className=''>
                 <h1 className='font-bold mb-8 relative'>
@@ -50,19 +55,56 @@ export default function Checkout() {
                 </h1>
 
                 <div className='mb-8'>
-                    <h3 className='font-bold mb-2 text-gray-500'>First Name</h3>
+                    <Badge color='white' content='*' className='top-2 -right-4  text-red-900 text-[22px]'>
+                        <h3 className='font-bold text-gray-600 text-sm'>First Name</h3>
+                    </Badge>
+                    <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                </div>
+                <div className='mb-8'>
+                    <Badge color='white' content='*' className='top-2 -right-4  text-red-900 text-[22px]'>
+                        <h3 className='font-bold text-gray-600 text-sm'>Last Name</h3>
+                    </Badge>
+                    <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                </div>
+                <div className='mb-8'>
+                    <Badge color='white' content='*' className='top-2 -right-4  text-red-900 text-[22px]'>
+                        <h3 className='font-bold text-gray-600 text-sm'>Email address</h3>
+                    </Badge>
+                    <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                </div>
+                <div className='mb-8'>
+                    <Badge color='white' content='*' className='top-2 -right-4  text-red-900 text-[22px]'>
+                        <h3 className='font-bold text-gray-600 text-sm'>Phone number</h3>
+                    </Badge>
                     <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
                 </div>
 
-                <h1 className='font-bold mb-8 mt-12 relative'>
-                    Personal details
+                <h1 className='font-bold mb-8 mt-16 relative'>
+                    Other details
                     <i className='absolute w-[calc(100%-130px)] border-gray-500 border-b-2 top-[49%] left-[130px]'></i>
                 </h1>
 
                 <div className='mb-8'>
-                    <h3 className='font-bold mb-2 text-gray-500'>First Name</h3>
+                    <h3 className='font-bold text-gray-600 text-sm'>Company Name</h3>
                     <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
                 </div>
+                <div className='mb-8'>
+                    <Badge color='white' content='*' className='top-2 -right-4  text-red-900 text-[22px]'>
+                        <h3 className='font-bold text-gray-600 text-sm'>Street Address</h3>
+                    </Badge>
+                    <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                </div>
+                <div className='mb-8'>
+                    <h3 className='font-bold text-gray-600 text-sm'>Apartment, floor, etc. (optional)</h3>
+                    <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                </div>
+                <div className='mb-8'>
+                    <Badge color='white' content='*' className='top-2 -right-4  text-red-900 text-[22px]'>
+                        <h3 className='font-bold text-gray-600 text-sm'>Town/City</h3>
+                    </Badge>
+                    <Input variant='standard' type='text' className='w-full bg-[#F5F5F5] pl-2' />
+                </div>
+
 
                 <Checkbox
                     label={
