@@ -1,10 +1,31 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { } from '@/redux'
+import { useDispatch, useSelector, CounterSlice } from '@/redux'
+import { useGetUserByIdQuery } from '@/redux/queries'
 import { PriSectionHeader, ItemsCarousel } from './components/utils'
 import { Button, Rating } from "@/app/components/materials";
+import { user } from "@/redux/dummy";
 
+export async function getServerSideProps() {
+  // This function runs on the server-side
+  // You can fetch data here and pass it as props to the component
+  // const data = await fetchDataSomehow();
+
+  return {
+    // props: {
+    //   data,
+    // },
+  };
+}
 export default function Home() {
+
+  const dispatch = useDispatch()
+  const counter = useSelector((state) => state.counter)
+  // const user = useSelector((state) => state.userApi)
+  const { decrement, increment } = CounterSlice
+
+  // const { data: user } = useGetUserByIdQuery({ id: "" })
 
   const Items = [
     { name: "Printed Gown", link: "/item", img: "/img/item1.png", price: "$39.00", rating: 4 },
@@ -31,12 +52,15 @@ export default function Home() {
 
         <div className='ml-8 mt-10 relative z-0'>
           <i className='absolute left-0 top-0 h-[40px] w-[107px] z-[1] rounded-md bg-[#FF56F6] -rotate-[10deg]'></i>
-          <Button variant="filled" className="block mb-2 capitalize z-[2] bg-my-pri-text-color relative">
+          <Button onClick={() => dispatch(increment())} variant="filled" className="block mb-2 capitalize z-[2] bg-my-pri-text-color relative">
             Shop Now
           </Button>
         </div>
       </section>
+      <section>
 
+        
+      </section>
       <section className="mt-14 pb-2">
         <PriSectionHeader title="New Release"></PriSectionHeader>
         <ItemsCarousel className='gap-x-4'>
