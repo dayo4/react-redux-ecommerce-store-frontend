@@ -40,12 +40,12 @@ export default function Checkout() {
                 {title: "Checkout", href: "/cart/checkout"},
             ]} />
 
-            <div className='flex flex-wrap justify-center lg:justify-between'>
-                <section className='p-3 basis-11/12 lg:basis-5/12'>
+            <div className='flex gap-x-6 flex-wrap justify-center md:justify-between'>
+                <section className='p-3 basis-full md:basis-[calc(50%-24px)]'>
                     <BillingComponent />
                 </section>
 
-                <section className='p-3 basis-11/12 lg:basis-5/12'>
+                <section className='p-3 basis-full md:basis-[calc(50%-24px)] mt-10 md:mt-0'>
                     <Card className='basis-11/12 sm:basis-9/12 md:basis-5/12 xl:basis-4/12 border-[1px] border-[#cacaca] font-[500]'>
                         <CardHeader className='text-' floated={false} shadow={false}>
                             <div className="flex justify-between align-middle px-1">
