@@ -1,3 +1,4 @@
+'use client'
 import Icon from '@mdi/react';
 import {
     mdiHeart, mdiHeartOutline, mdiMagnify, mdiStoreSearch, mdiTrashCan, mdiTrashCanOutline
@@ -20,7 +21,7 @@ import {
     Avatar,
     IconButton,
     Tooltip,
-} from "@/app/components/materials";
+} from "@material-tailwind/react";
 
 export default function Reviews() {
 

@@ -1,4 +1,5 @@
-// import { Button } from "@/app/components/materials";
+'use client'
+// import { Button } from "@material-tailwind/react";
 
 export const PriSectionHeader = ({
     title,

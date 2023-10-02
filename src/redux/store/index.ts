@@ -4,7 +4,6 @@ import {
   type ThunkAction,
   type Action,
 } from "@reduxjs/toolkit";
-// import { userApi } from "../queries/userApi";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 /* Instruments */

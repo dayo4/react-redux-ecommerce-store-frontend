@@ -1,3 +1,4 @@
+'use client'
 import { Url } from 'next/dist/shared/lib/router/router'
 import Link from 'next/link'
 import Icon from '@mdi/react';
@@ -24,7 +25,7 @@ import {
     Checkbox,
     Alert,
     Breadcrumbs
-} from "@/app/components/materials";
+} from "@material-tailwind/react";
 
 export const TopBreadcrumb = ({
     links
