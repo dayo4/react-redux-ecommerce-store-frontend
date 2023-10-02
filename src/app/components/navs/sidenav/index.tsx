@@ -1,12 +1,14 @@
 'use client'
-import { Button } from "@/app/components/materials";
+import { Button } from "@material-tailwind/react";
 import Icon from '@mdi/react';
 import { debounce } from "lodash";
 import { useDispatch, useSelector, NavSlice } from '@/redux'
+import { useGetAllCategoriesQuery } from '@/redux/queries'
 import {
    mdiArrowRight,
    mdiArrowRightThin,
    mdiCloseOutline,
+   mdiHomeGroup,
    mdiMenu
 } from '@mdi/js';
 import Image from 'next/image'
@@ -71,6 +73,8 @@ export const SideNav = ({ }: SideNavProps) => {
       }
    }
 
+   const { data, isLoading, error } = useGetAllCategoriesQuery(null)
+   // console.log(data)
 
    return (
       <aside className={(!nav.status ? " ShrinkOnSmallScreen " : " ExpandOnSmallScreen ") + " h-full lg:min-w-[210px] absolute top-0 left-0 bg-white pt-[65px] z-[100] overflow-hidden border-r border-gray-200 transition-all shadow-lg lg:shadow-md overflow-x-hidden"}>
@@ -80,6 +84,15 @@ export const SideNav = ({ }: SideNavProps) => {
                <Icon onClick={() => handleSideNav()} path={mdiCloseOutline} size={0.9} className="absolute -top-10 right-0 lg:hidden hover:bg-gray-300 active:bg-gray-400 transition-all rounded-md cursor-pointer" />
                <h1 className="font-bold text-[24px] mb-6 text-my-pri-text-color">Explore</h1>
                <div className="pb-12">
+                  <Button variant="text" className={(pathname === '/' ? "text-my-pri-color border-l-2 border-l-my-pri-color " : "") + " block w-full mb-2 capitalize overflow-hidden relative"}>
+                     <Link href={'/'} className={"flex pr-4 font-[600]"} >
+                        {/* <Image src={link.icon} alt={link.title} className='mr-4' height={22} width={22}></Image> */}
+                        <Icon path={mdiHomeGroup} size={1} className='text-yellow-700 mr-4'></Icon>
+                        <span className="mt-[3px]">Home</span>
+                     </Link>
+                     {/* <Icon path={mdiArrowRight} size={0.8} className="absolute top-[30%] -left-[6px]"></Icon> */}
+                  </Button>
+
                   {NavLinks.map((link, i) => {
                      return (
 

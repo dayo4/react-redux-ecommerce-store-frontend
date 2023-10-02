@@ -1,3 +1,4 @@
+'use client'
 import Icon from '@mdi/react';
 import {
     mdiHeart, mdiHeartOutline, mdiMagnify, mdiStoreSearch, mdiTrashCan, mdiTrashCanOutline
@@ -27,7 +28,7 @@ import {
     IconButton,
     Tooltip,
     Radio,
-} from "@/app/components/materials";
+} from "@material-tailwind/react";
 
 
 
