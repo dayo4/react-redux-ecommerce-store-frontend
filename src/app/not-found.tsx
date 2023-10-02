@@ -1,7 +1,8 @@
+'use client'
 import Link from 'next/link'
 import {
   Button,
-} from "@/app/components/materials";
+} from "@material-tailwind/react";
 
 export default function NotFound() {
   return (
