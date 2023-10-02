@@ -24,7 +24,7 @@ import {
     Avatar,
     IconButton,
     Tooltip,
-} from "@/app/components/materials";
+} from "@material-tailwind/react";
 import { useState } from 'react';
 
 
