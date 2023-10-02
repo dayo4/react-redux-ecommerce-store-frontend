@@ -1,3 +1,4 @@
+'use client'
 import Icon from '@mdi/react';
 import {
     mdiAlert,
@@ -25,7 +26,7 @@ import {
     Checkbox,
     Alert,
     Badge
-} from "@/app/components/materials";
+} from "@material-tailwind/react";
 
 
 

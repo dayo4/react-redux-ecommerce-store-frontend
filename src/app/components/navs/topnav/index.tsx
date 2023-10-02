@@ -23,7 +23,7 @@ import {
    MenuList,
    MenuItem,
    Typography
-} from "@/app/components/materials";
+} from "@material-tailwind/react";
 
 export const TopNav = ({
    // children,
@@ -142,12 +142,14 @@ export const TopNav = ({
 
    return (
       <div className="flex justify-between align-middle h-[65px] absolute top-0 left-0 z-[200] bg-white w-full border-b border-gray-200">
-         <div className='flex justify-center align-middle w-[90px] lg:w-[132px] lg:h-[31px] lg:mt-3'>
+         {/* <div className='flex justify-center align-middle w-[90px] lg:w-[132px] lg:h-[31px] lg:mt-3'> */}
+         <Link href={'/'} className='flex justify-center align-middle w-[90px] lg:w-[132px] lg:h-[31px] lg:mt-3'>
             <img src={"/icons/logo.svg"} alt='Store logo' /* width={162} height={31.05} */ className="max-w-full max-h-full ml-8 sm:ml-12" />
-         </div>
-         <div className="hidden md:flex align-middle mt-3">
+         </Link>
+         {/* </div> */}
+         {/* <div className="align-middle mt-3"> */}
             {/* <input type="search" placeholder="Search here" className="mt-2 flex h-11 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-lg outline-none border-gray-300" /> */}
-            <Input
+            {/* <Input
                label="Search"
                type={'search'}
                icon={
@@ -155,21 +157,21 @@ export const TopNav = ({
                   <Icon path={mdiMagnify} className='cursor-pointer p-1 rounded-md hover:bg-gray-400 active:bg-gray-500 transition-colors' size={1.1} />
                   // </Button>
                }
-            />
-         </div>
+            /> */}
+         {/* </div> */}
          <div className='flex align-middle mx-4 mt-3'>
             <UserMenu></UserMenu>
             {/* <IconButton variant='text' className='mr-2 p-0'>
                <Image src={PhoneIcon} alt="Phone Icon" height={22} width={22}></Image>
             </IconButton> */}
             <div className='md:mr-4 lg:mr-6'>
-            <Badge color='pink' className='top-3 right-4 w-2'>
-               <IconButton variant='text' className='mr-2'>
-                  <Link href={'/cart'}>
-                     <Image src={NavCartIcon} alt="NavCart Icon" height={26} width={26}></Image>
-                  </Link>
-               </IconButton>
-            </Badge>
+               <Badge color='pink' className='top-3 right-4 w-2'>
+                  <IconButton variant='text' className='mr-2'>
+                     <Link href={'/cart'}>
+                        <Image src={NavCartIcon} alt="NavCart Icon" height={26} width={26}></Image>
+                     </Link>
+                  </IconButton>
+               </Badge>
             </div>
             <IconButton onClick={() => handleSideNav()} variant='text' className='mr-0 md:mr-6 lg:hidden'>
                <Image src={FunnelMenuIcon} alt="Menu Icon" height={30} width={30}></Image>
