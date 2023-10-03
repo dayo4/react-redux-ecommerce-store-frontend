@@ -28,7 +28,7 @@ export default async function Layout({
                                 alt={""}
                                 className="p-1 w-full h-full"
                             />
-                            <div className="absolute inset-0 max-w-full px-12 pt-28 text-white">
+                            <div className="absolute inset-0 max-w-full px-12 pt-16 text-white">
                                 <h2 className="text-[36px] mt-28 font-bold">
                                     List, Sell, Thrive, Repeat.
                                 </h2>
@@ -46,7 +46,7 @@ export default async function Layout({
                                 alt={""}
                                 className="p-1 w-full h-full"
                             />
-                            <div className="absolute inset-0 max-w-full px-12 pt-28 text-white">
+                            <div className="absolute inset-0 max-w-full px-12 pt-16 text-white">
                                 <h2 className="text-[36px] mt-28 font-bold">
                                     Shop Securely
                                 </h2>
