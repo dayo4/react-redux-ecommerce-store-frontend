@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import './globals.css'
 import type { Metadata } from 'next'
@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google'
 
 import { StoreProvider } from '@/redux/provider'
 import { SideNav, TopNav } from './components/navs'
-// import { useSelector } from '@/redux'
+import { useRouter, usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,25 +20,51 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const pathname = usePathname()
+
+  const authRoutes = ['/login', '/register', '/reset-password']
+
+  const AuthLayout = (children) => {
+    return (
+      <div className='MainContainer h-screen px-7 overflow-y-auto'>
+
+
+        <main className="h-full">
+          {children}
+        </main>
+
+      </div>
+    )
+  }
+  const MainLayout = (children) => {
+    return (
+      <div className='MainContainer lg:ml-[200px] h-[calc(100vh-65px)] mt-[65px] px-7 overflow-y-auto'>
+
+        <TopNav></TopNav>
+        <SideNav></SideNav>
+
+
+        <main className="h-full">
+          {children}
+        </main>
+
+      </div>
+    )
+  }
+
   return (
     <html lang="en">
-      <body className={inter.className + 'bg-white overflow-hidden p-0 m-0'}>
+      <StoreProvider>
+        <body className={inter.className + 'bg-white overflow-hidden p-0 m-0'}>
 
-        <div className='MainContainer lg:ml-[200px] h-[calc(100vh-65px)] mt-[65px] px-7 overflow-y-auto'>
-          <StoreProvider>
+          {
+            authRoutes.includes(pathname) ?
+              AuthLayout(children) :
+              MainLayout(children)
+          }
 
-            <TopNav></TopNav>
-            <SideNav></SideNav>
-
-
-            <main className="h-full">
-              {children}
-            </main>
-
-          </StoreProvider>
-        </div>
-
-      </body>
+        </body>
+      </StoreProvider>
     </html>
   )
 }
