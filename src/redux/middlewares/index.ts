@@ -1,11 +1,13 @@
 /* Core */
 // import { createLogger } from 'redux-logger'
 import { userApi } from "../queries/userApi";
+import { authApi } from "../queries/authApi";
 import { productApi } from "../queries/productsApi";
 import { cartApi } from "../queries/cartApi";
 
 const middleware = [
   userApi.middleware,
+  authApi.middleware,
   productApi.middleware,
   cartApi.middleware,
   //   createLogger({

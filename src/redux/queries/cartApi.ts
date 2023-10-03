@@ -25,5 +25,3 @@ export const cartApi = createApi({
     }),
   }),
 });
-
-export const { useSyncCartQuery } = cartApi;
