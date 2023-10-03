@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { user } from "@/redux/dummy";
 
-type Product = {
+export type Product = {
   id: number;
   name: string;
   price: string
 };
-type Category = {
+export type CategoryData = {
   catid: number;
   categorname: string;
 };
@@ -21,7 +21,7 @@ export const productApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getAllCategories: builder.query<Category[], null>({
+    getAllCategories: builder.query<CategoryData[], null>({
       query: () => ({
         url: "/getAllCategories",
         method: "POST",
@@ -33,4 +33,3 @@ export const productApi = createApi({
   }),
 });
 
-export const { useGetAllCategoriesQuery } = productApi;
