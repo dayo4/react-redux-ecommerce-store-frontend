@@ -1,5 +1,6 @@
 /* Api Queries */
 import { userApi } from "../queries/userApi";
+import { authApi } from "../queries/authApi";
 import { productApi } from "../queries/productsApi";
 import { cartApi } from "../queries/cartApi";
 
@@ -13,6 +14,7 @@ export const reducer = {
   nav: navReducer,
   cart: cartReducer,
   [userApi.reducerPath]: userApi.reducer,
+  [authApi.reducerPath]: authApi.reducer,
   [productApi.reducerPath]: productApi.reducer,
   [cartApi.reducerPath]: cartApi.reducer,
 }
