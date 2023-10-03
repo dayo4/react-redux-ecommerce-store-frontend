@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { user } from "@/redux/dummy";
 
 type User = {
   id: number;
@@ -25,14 +24,5 @@ export const userApi = createApi({
     getUserById: builder.query<User, { id: string }>({
       query: ({ id }) => `users/${id}`,
     }),
-    loginUser: builder.query<User, { id: string }>({
-      query: (userData) => ({
-        url: "login",
-        method: "POST",
-        body: userData,
-      }),
-    }),
   }),
 });
-
-export const { useGetUsersQuery, useGetUserByIdQuery } = userApi;
