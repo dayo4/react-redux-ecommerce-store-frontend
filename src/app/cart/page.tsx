@@ -3,12 +3,12 @@ import Icon from '@mdi/react';
 import {
     mdiArrowLeft,
     mdiArrowRight,
-    mdiHeart, mdiHeartOutline, mdiMagnify, mdiStoreSearch, mdiTrashCan, 
+    mdiHeart, mdiHeartOutline, mdiMagnify, mdiStoreSearch, mdiTrashCan,
     mdiTrashCanOutline
 } from '@mdi/js';
 import Image from 'next/image'
 import Link from 'next/link'
-import {  } from '@/redux'
+import { } from '@/redux'
 import { PriSectionHeader, TopBreadcrumb } from '@/app/components/utils'
 import {
     Rating,
@@ -75,12 +75,12 @@ export default function Reviews() {
     ];
 
     return (
-        <div>
+        <div className='md:px-10'>
             <TopBreadcrumb links={[
                 { title: "Cart", href: "/cart" },
             ]} />
 
-            <Card className="">
+            <Card className="shadow-none border border-gray-200">
                 {/* <CardHeader floated={false} shadow={false} className="rounded-none">
                 <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
                     <div>
@@ -225,9 +225,9 @@ export default function Reviews() {
                 </CardFooter>
             </Card>
 
-            <div className='flex justify-center my-12'>
+            <div className='flex my-12 pb-14'>
 
-                <Card className='basis-11/12 sm:basis-9/12 md:basis-5/12 xl:basis-4/12 border-[1px] border-[#cacaca] font-[500]'>
+                <Card className='basis-11/12 sm:basis-9/12 md:basis-6/12 xl:basis-5/12 border border-gray-300 shadow-none  font-medium'>
                     <CardHeader className='text-xl' floated={false} shadow={false}>
                         Cart Total
                     </CardHeader>
@@ -246,11 +246,11 @@ export default function Reviews() {
                         </p>
                     </CardBody>
                     <CardFooter className='flex justify-center'>
-                        <Button variant="filled" className="mb-2 bg-my-pri-color rounded-md">
-                            <Link href={"/cart/checkout"} >
+                        <Link href={"/cart/checkout"} className='mb-2'>
+                            <Button variant="filled" className="bg-my-pri-color rounded-md">
                                 Process to checkout
-                            </Link>
-                        </Button>
+                            </Button>
+                        </Link>
                     </CardFooter>
                 </Card>
             </div>
