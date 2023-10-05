@@ -82,7 +82,7 @@ export const SideNav = ({ }: SideNavProps) => {
          <div className='flex justify-center h-full overflow-y-scroll translate-x-[17px]'>
 
             <section className="mt-14 relative">
-               <Icon onClick={() => handleSideNav()} path={mdiCloseOutline} size={0.9} className="absolute -top-10 right-0 lg:hidden hover:bg-gray-300 active:bg-gray-400 transition-all rounded-md cursor-pointer" />
+               <Icon onClick={() => handleSideNav()} path={mdiCloseOutline} size={0.9} className="absolute -top-10 right-0 lg:hidden text-gray-600 hover:bg-gray-300 active:bg-gray-400 transition-all rounded-md cursor-pointer" />
                <h1 className="font-bold text-[24px] mb-6 text-my-pri-text-color">Explore</h1>
                <div className="pb-12">
                   <Button variant="text" className={(pathname === '/' ? "text-my-pri-color border-l-2 border-l-my-pri-color " : "") + " block w-full mb-2 capitalize overflow-hidden relative"}>
