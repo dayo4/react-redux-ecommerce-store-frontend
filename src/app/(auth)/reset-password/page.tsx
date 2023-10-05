@@ -67,7 +67,7 @@ export default function Login(props: React.PropsWithChildren) {
                     <Input onChange={(e) => setEmail(e.target.value)} value={email} variant="standard" type={"email"} placeholder='Email' name='email' className="bg-gray-100 px-2 text-xl" />
                 </div>
 
-                <Button onClick={() => setStage(2)/* sendEmail({ email }) */} className="w-full mb-8">Continue</Button>
+                <Button onClick={() => /* setStage(2) */sendEmail({ email })} className="w-full mb-8">Continue</Button>
 
                 <Button onClick={() => push('/login')} variant="text" className="w-full align-middle justify-center mb-8 flex bg-white text-black">
                     <Icon path={mdiArrowLeft} size={1} />

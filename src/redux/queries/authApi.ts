@@ -10,7 +10,8 @@ export type RegisterData = {
   password: string;
 };
 export type ResetData = {
-  email: string;
+  email?: string;
+  stage?: number;
 };
 
 export const authApi = createApi({
@@ -38,7 +39,7 @@ export const authApi = createApi({
     }),
     passwordReset: builder.mutation<null, ResetData>({
       query: (userData) => ({
-        url: "/login",
+        url: "/resetPassword",
         method: "POST",
         body: userData,
       }),

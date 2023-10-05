@@ -75,7 +75,7 @@ export const SideNav = ({ }: SideNavProps) => {
    }
 
    const { data, isLoading, error } = useGetAllCategoriesQuery(null)
-   // console.log(data)
+   console.log(data)
 
    return (
       <aside className={(!nav.status ? " ShrinkOnSmallScreen " : " ExpandOnSmallScreen ") + " h-full lg:min-w-[210px] absolute top-0 left-0 bg-white pt-[65px] z-[100] overflow-hidden border-r border-gray-200 transition-all shadow-lg lg:shadow-md overflow-x-hidden"}>

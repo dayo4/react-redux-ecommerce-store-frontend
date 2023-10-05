@@ -176,7 +176,7 @@ export default function Item() {
                 <Button variant="filled" className="w-full mb-2 bg-my-pri-color rounded-md">
                   BUY NOW
                 </Button>
-                <Button variant="filled" className="w-full mb-2 text-my-pri-text-color bg-[#F1F1F1] rounded-md">
+                <Button onClick={() => handleAddToCart()} variant="filled" className="w-full mb-2 text-my-pri-text-color bg-[#F1F1F1] rounded-md">
                   ADD TO CART
                 </Button>
               </div>

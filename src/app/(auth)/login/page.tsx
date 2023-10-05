@@ -64,7 +64,7 @@ export default function Login(props: React.PropsWithChildren) {
                 </div>
 
                 <Button variant="outlined" className="w-full align-middle justify-center mb-8 flex bg-white text-black">
-                    <Image src={GoogleIcon} alt='google icon' width={22} height={22} className='mr-2' />
+                    <Image src={GoogleIcon} placeholder='empty' alt='google icon' width={22} height={22} className='mr-2' />
                     <span className="mt-1">Log in with Google</span>
                 </Button>
             </form>
