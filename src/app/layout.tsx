@@ -1,6 +1,7 @@
 'use client';
 
 import './globals.css'
+import '../loaders/main.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -29,7 +30,7 @@ export default function RootLayout({
       <div className='MainContainer h-screen px-7 overflow-y-auto'>
 
 
-        <main className="h-full">
+        <main className="h-full relative">
           {children}
         </main>
 
@@ -44,7 +45,7 @@ export default function RootLayout({
         <SideNav></SideNav>
 
 
-        <main className="h-full">
+        <main className="h-full relative">
           {children}
         </main>
 
