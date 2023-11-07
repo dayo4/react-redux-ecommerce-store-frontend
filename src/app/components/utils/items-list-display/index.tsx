@@ -5,7 +5,7 @@ export const ItemsListDisplay = ({
 }: ItemsListDisplayProps) => {
     return (
         <div className="w-full">
-            <div className={className + ' ' + 'flex align-middle'}>
+            <div className={className + ' ' + 'flex items-center'}>
                 {children}
             </div>
         </div>

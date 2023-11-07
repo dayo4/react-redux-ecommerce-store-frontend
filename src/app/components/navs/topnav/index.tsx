@@ -141,13 +141,13 @@ export const TopNav = ({
    }
 
    return (
-      <div className="flex justify-between align-middle h-[65px] absolute top-0 left-0 z-[200] bg-white w-full border-b border-gray-200">
-         {/* <div className='flex justify-center align-middle w-[90px] lg:w-[132px] lg:h-[31px] lg:mt-3'> */}
-         <Link href={'/'} className='flex justify-center align-middle w-[90px] lg:w-[132px] lg:h-[31px] lg:mt-3'>
+      <div className="flex justify-between items-center h-[65px] absolute top-0 left-0 z-[200] bg-white w-full border-b border-gray-200">
+         {/* <div className='flex justify-center items-center w-[90px] lg:w-[132px] lg:h-[31px] lg:mt-3'> */}
+         <Link href={'/'} className='flex justify-center items-center w-[90px] lg:w-[132px] lg:h-[31px]'>
             <img src={"/icons/logo.svg"} alt='Store logo' /* width={162} height={31.05} */ className="max-w-full max-h-full ml-8 sm:ml-12" />
          </Link>
          {/* </div> */}
-         {/* <div className="align-middle mt-3"> */}
+         {/* <div className="items-center mt-3"> */}
             {/* <input type="search" placeholder="Search here" className="mt-2 flex h-11 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-lg outline-none border-gray-300" /> */}
             {/* <Input
                label="Search"
@@ -159,7 +159,7 @@ export const TopNav = ({
                }
             /> */}
          {/* </div> */}
-         <div className='flex align-middle mx-4 mt-3'>
+         <div className='flex items-center mx-4'>
             <UserMenu></UserMenu>
             {/* <IconButton variant='text' className='mr-2 p-0'>
                <Image src={PhoneIcon} alt="Phone Icon" height={22} width={22}></Image>

@@ -2,23 +2,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useDispatch, useSelector, CounterSlice } from '@/redux'
-import { useGetUserByIdQuery } from '@/redux/queries'
 import { PriSectionHeader, ItemsCarousel } from '@/app/components/utils'
 import { Button, Rating } from "@material-tailwind/react";
-import { user } from "@/redux/dummy";
 
 import { useSearchParams, usePathname, useParams } from 'next/navigation'
+import { userApi } from '@/redux/queries/userApi'
+import { productApi } from '@/redux/queries/productApi'
 
 
 export default function Home() {
 
   const dispatch = useDispatch()
-  const counter = useSelector((state) => state.counter)
   // const user = useSelector((state) => state.userApi)
-  const { decrement, increment } = CounterSlice
+  const { useGetCategoryProductsQuery } = productApi;
   const searchParams = useSearchParams()
   const params = useParams()
 
+  const { data, isLoading, error } = useGetCategoryProductsQuery(null)
+  console.log(data)
   // const { data: user } = useGetUserByIdQuery({ id: "" })
 
   const Items = [
@@ -46,7 +47,7 @@ export default function Home() {
 
       <section className="mt-14 pb-2">
         <PriSectionHeader title={String(searchParams.get('title') || params.name)}></PriSectionHeader>
-        <div className='gap-x-3 gap-y-6 flex flex-wrap align-middle'>
+        <div className='gap-x-3 gap-y-6 flex flex-wrap items-center'>
           {Items.map((item, i) => {
             return (
               <Link href={item.link} className='basis-[calc(50%-12px)] sm:basis-[calc(33.33%-12px)] md:basis-[calc(25%-12px)] xl:basis-[calc(20%-12px)] bg-[#FBFBFB] p-2 rounded-sm' key={i}>

@@ -12,7 +12,7 @@ export type CategoryData = {
 };
 
 export const productApi = createApi({
-  reducerPath: "productApi",
+  reducerPath: "productwaApi",
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
@@ -27,11 +27,17 @@ export const productApi = createApi({
         method: "POST",
       }),
     }),
-    getProduct: builder.query<ProductData, String>({
-      query: (producttoken) => ({
-        url: "/getProduct",
+    getCategoryProducts: builder.query<CategoryData[], null>({
+      query: () => ({
+        url: "/getProductCategory",
         method: "POST",
-        body: producttoken,
+      }),
+    }),
+    getProduct: builder.query<ProductData, { producttoken: String }>({
+      query: ({producttoken}) => ({
+        url: "/getProductByToken?producttoken="+producttoken,
+        method: "GET",
+        // body: producttoken,
       }),
     }),
   }),

@@ -14,7 +14,7 @@ export default async function Layout({
 
     return (
         <div>
-            <div className="flex gap-x-8 justify-center align-middle">
+            <div className="flex gap-x-8 justify-center items-center">
                 <section className="basis-11/12 sm:basis-9/12 md:basis-7/12 lg:basis-1/2">
 
                     {children}

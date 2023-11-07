@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="">
       <section className="HeroBg mt-7 sm:px-6" >
-        <div className='flex justify-between align-middle relative'>
+        <div className='flex justify-between items-center relative'>
           <div className="max-w-[250px] sm:max-w-[300px] md:max-w-[400px] pt-8 ml-8">
             <h2 className="text-2xl md:text-[32px] font-[700] text-my-pri-text-color">Online Shopping Made Easier</h2>
             <p className="font-[500] mt-4">Show them the love this summer, and get 50% off your purchase</p>

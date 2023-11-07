@@ -48,3 +48,7 @@ body {
   min-width: 210px !important;
   max-width: 210px !important;
 }
+
+.ItemsCarousel > * {
+  scroll-snap-align: center;
+}

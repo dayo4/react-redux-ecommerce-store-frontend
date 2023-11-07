@@ -6,7 +6,7 @@ import {
 
 export default function NotFound() {
   return (
-    <div className='w-full h-full flex justify-center align-middle text-center'>
+    <div className='w-full h-full flex justify-center items-center text-center'>
       <div className='basis-11/12 sm:basis-10/12 lg:basis-8/12'>
         <h1 className='text-[60px]'>404 Not Found</h1>
         <p>Could not find the page you are looking for</p>

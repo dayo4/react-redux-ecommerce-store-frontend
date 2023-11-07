@@ -63,7 +63,7 @@ export default function Login(props: React.PropsWithChildren) {
                     <Link href={'/register'} className="text-my-pri-color"> Sign Up</Link>
                 </div>
 
-                <Button variant="outlined" className="w-full align-middle justify-center mb-8 flex bg-white text-black">
+                <Button variant="outlined" className="w-full items-center justify-center mb-8 flex bg-white text-black">
                     <Image src={GoogleIcon} placeholder='empty' alt='google icon' width={22} height={22} className='mr-2' />
                     <span className="mt-1">Log in with Google</span>
                 </Button>

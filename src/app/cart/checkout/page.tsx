@@ -49,7 +49,7 @@ export default function Checkout() {
                 <section className='p-3 basis-full md:basis-[calc(50%-24px)] mt-10 md:mt-0'>
                     <Card className='basis-11/12 sm:basis-9/12 md:basis-5/12 xl:basis-4/12 border-[1px] border-[#cacaca] font-[500]'>
                         <CardHeader className='text-' floated={false} shadow={false}>
-                            <div className="flex justify-between align-middle px-1">
+                            <div className="flex justify-between items-center px-1">
                                 <div className="flex items-center gap-3">
                                     <Image
                                         src={"/img/item1.png"}
@@ -87,7 +87,7 @@ export default function Checkout() {
                             </p>
                         </CardBody>
                         <CardFooter className=''>
-                            <div className='flex justify-between align-middle'>
+                            <div className='flex justify-between items-center'>
                                 <Radio name='payment' label={
                                     <Typography className="font-medium">
                                         Bank

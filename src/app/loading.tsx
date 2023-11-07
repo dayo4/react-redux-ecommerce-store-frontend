@@ -7,7 +7,7 @@ export default function Loading() {
 
     return (
         <Loader />
-        // <div className="flex justify-center align-middle w-full h-full bg-neutral-300">
+        // <div className="flex justify-center items-center w-full h-full bg-neutral-300">
         //     {/* <FadeLoader
         //         color={'#3690FF'}
         //         loading={true}

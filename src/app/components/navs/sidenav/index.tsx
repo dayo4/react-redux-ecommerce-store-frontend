@@ -3,7 +3,7 @@ import { Button } from "@material-tailwind/react";
 import Icon from '@mdi/react';
 import { debounce } from "lodash";
 import { useDispatch, useSelector, NavSlice } from '@/redux'
-import { productApi } from '@/redux/queries/productsApi'
+import { productApi } from '@/redux/queries/productApi'
 import {
    mdiArrowRight,
    mdiArrowRightThin,

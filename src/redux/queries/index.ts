@@ -1,4 +1,4 @@
 export * from "./userApi"
-export * from "./productsApi"
+export * from "./productApi"
 export * from "./cartApi"
 export * from "./authApi"

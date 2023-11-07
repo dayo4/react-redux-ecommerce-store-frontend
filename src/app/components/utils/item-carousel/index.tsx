@@ -5,7 +5,7 @@ export const ItemsCarousel = ({
 }: ItemsCarouselProps) => {
     return (
         <div className="overflow-y-hidden w-full">
-            <div className={className + ' ' + 'flex align-middle overflow-x-scroll translate-y-5'}>
+            <div className={className + ' ' + 'flex items-center overflow-x-scroll translate-y-5'}>
                 {children}
             </div>
         </div>

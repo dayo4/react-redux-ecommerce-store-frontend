@@ -10,12 +10,14 @@ import { PriSectionHeader, TopBreadcrumb, ItemsCarousel } from '@/app/components
 import { Button, Rating, Input } from "@material-tailwind/react";
 import Reviews from "./(components)/reviews"
 import { useDispatch, useSelector, CartSlice } from '@/redux'
+import { productApi } from '@/redux/queries/productApi'
 
 export default function Item() {
   const { addToCart, updateQuantity, removeFromCart } = CartSlice
 
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const { useGetProductQuery } = productApi;
 
   const handleAddToCart = (product) => {
     dispatch(addToCart({ ...product, quantity: 1 }));
@@ -28,6 +30,10 @@ export default function Item() {
   const handleQuantityChange = (productId, quantity) => {
     dispatch(updateQuantity({ productId, quantity }));
   };
+
+  const { data, isLoading, error } = useGetProductQuery({ producttoken: "416214" })
+  console.log(data)
+  console.log(error)
 
   const Items = [
     { name: "Printed Gown", link: "/item", img: "/img/item1.png", price: "$39.00", rating: 4.9 },
@@ -81,7 +87,7 @@ export default function Item() {
         <div className='flex flex-wrap md:flex-nowrap lg:flex-nowrap justify-center md:gap-x-2 xl:gap-x-14'>
 
           <section className='w-[100%] sm:w-[91.7%] md:w-[66.7%] mb-10'>
-            <div className='flex justify-center align-middle min-h-[300px] max-h-[500px] w-full relative rounded-md object-contain bg-[#F6F6F6]'>
+            <div className='flex justify-center items-center min-h-[300px] max-h-[500px] w-full relative rounded-md object-contain bg-[#F6F6F6]'>
               {/* <img src={"/img/t-shirt.png"} className="rounded-md max-w-full max-h-full" alt={""} /> */}
               <Image src={"/img/t-shirt.png"} placeholder='empty' className="rounded-md " width={500} height={500} alt={""}></Image>
             </div>
@@ -107,7 +113,7 @@ export default function Item() {
 
               <h1 className='text-my-sec-text-color text-xl font-bold'>Personalized T-Shirt</h1>
 
-              <div className='flex justify-between align-middle mt-3 mb-5'>
+              <div className='flex justify-between items-center mt-3 mb-5'>
                 <p className='text-[#7275A1] text-[12px] font-[500] mt-2'>Size:  <b>XL</b></p>
                 <div className="flex items-center mt-1">
                   <svg className="w-5 h-5 -ml-1 text-yellow-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -116,13 +122,13 @@ export default function Item() {
                 {/* <Rating readonly value={4} className='my-1 -ml-1' /> */}
               </div>
 
-              <div className='flex align-middle mt-3 mb-5'>
+              <div className='flex items-center mt-3 mb-5'>
                 <p className='text-[#7275A1] text-[12px] font-[600] mt-2 mr-4'>Quantity:</p>
                 <input className='w-[60px] text-center border-[1px] border-[#cacaca] p-1 rounded-md focus:outline-my-pri-color' type={'number'} min={0}></input>
                 {/* <Input size='md' label='How Many' color='gray' className='w-[80px]' type={'number'} /> */}
               </div>
 
-              <div className='flex justify-between align-middle mt-3 mb-5'>
+              <div className='flex justify-between items-center mt-3 mb-5'>
                 <p className='text-my-sec-text-color text-[24px] font-[600] mt-2 mr-4'>$400.00</p>
               </div>
             </div>

@@ -19,7 +19,7 @@ export default function MainLoader(props: React.PropsWithChildren) {
 
 
     return (
-        <div className="flex justify-center align-middle h-full w-full absolute bg-gray-200 bg-opacity-25">
+        <div className="flex justify-center items-center h-full w-full absolute bg-gray-200 bg-opacity-25">
             <div className="MainLoaderSpinner"></div>
         </div>
     )

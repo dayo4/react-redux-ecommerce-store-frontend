@@ -69,7 +69,7 @@ export default function Login(props: React.PropsWithChildren) {
 
                 <Button onClick={() => /* setStage(2) */sendEmail({ email })} className="w-full mb-8">Continue</Button>
 
-                <Button onClick={() => push('/login')} variant="text" className="w-full align-middle justify-center mb-8 flex bg-white text-black">
+                <Button onClick={() => push('/login')} variant="text" className="w-full items-center justify-center mb-8 flex bg-white text-black">
                     <Icon path={mdiArrowLeft} size={1} />
                     <span className="mt-1 ml-2">Go Back</span>
                 </Button>
@@ -96,7 +96,7 @@ export default function Login(props: React.PropsWithChildren) {
                     <p onClick={() => setStage(1)} className="text-my-pri-color ml-1 cursor-pointer"> Click to resend</p>
                 </div>
 
-                <Button onClick={() => setStage(1)} variant="text" className="w-full align-middle justify-center mb-8 flex bg-white text-black">
+                <Button onClick={() => setStage(1)} variant="text" className="w-full items-center justify-center mb-8 flex bg-white text-black">
                     <Icon path={mdiArrowLeft} size={1} />
                     <span className="mt-1 ml-2">Go Back</span>
                 </Button>
