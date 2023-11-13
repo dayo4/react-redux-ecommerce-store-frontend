@@ -11,7 +11,7 @@ import { StoreProvider } from '@/redux/provider'
 import { SideNav, TopNav } from './components/navs'
 import { useRouter, usePathname } from 'next/navigation'
 
-import { mockApi } from '@/mock-api'; // Import MirageJS setup
+// import { mockApi } from '@/mock-api'; // Import MirageJS setup
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 }
 
 // Start the Mirage server
-if (process.env.NODE_ENV === 'development') {
-  mockApi();
-}
+// if (process.env.NODE_ENV === 'development') {
+//   mockApi();
+// }
 
 export default function RootLayout({
   children,
