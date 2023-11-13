@@ -1,6 +1,4 @@
 'use client';
-// import { http, HttpResponse } from 'msw'
-import Pretender from 'pretender';
 
 import './globals.css'
 import '../loaders/main.css'

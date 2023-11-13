@@ -55,15 +55,15 @@ export const SideNav = ({ }: SideNavProps) => {
    const { push } = useRouter()
    const pathname = usePathname()
 
-   // const NavLinks = [
-   //    { title: "New Arrivals", href: "/categories/new-arrivals", icon: NewRealeasesIcon },
-   //    { title: "Clothing", href: "/categories/clothing", icon: ClothingIcon },
-   //    { title: "Shoes", href: "/categories/shoes", icon: ShoesIcon },
-   //    { title: "Accessories", href: "/categories/accessories", icon: AccessoriesIcon },
-   //    { title: "Activewear", href: "/categories/activewear", icon: ActivewearIcon },
-   //    { title: "Gifts & Living", href: "/categories/gifts", icon: GiftsIcon },
-   //    { title: "Inspiration", href: "/categories/inspiration", icon: InspirationIcon },
-   // ]
+   const NavLinks = [
+    {id: 1, title: "New Arrivals", href: "/categories/new-arrivals", icon: NewRealeasesIcon },
+    {id: 2, title: "Clothing", href: "/categories/clothing", icon: ClothingIcon },
+    {id: 3, title: "Shoes", href: "/categories/shoes", icon: ShoesIcon },
+    {id: 4, title: "Accessories", href: "/categories/accessories", icon: AccessoriesIcon },
+    {id: 5, title: "Activewear", href: "/categories/activewear", icon: ActivewearIcon },
+    {id: 6, title: "Gifts & Living", href: "/categories/gifts", icon: GiftsIcon },
+    {id: 7, title: "Inspiration", href: "/categories/inspiration", icon: InspirationIcon },
+ ]
 
    function handleSideNav() {
       if (nav.status && nav.isSmallScreen) {
@@ -74,8 +74,8 @@ export const SideNav = ({ }: SideNavProps) => {
       }
    }
 
-   const { data: NavLinks, isLoading, error } = useGetAllCategoriesQuery(null)
-   console.log(NavLinks)
+   const { data, isLoading, error } = useGetAllCategoriesQuery(null)
+   // console.log(data)
 
    return (
       <aside className={(!nav.status ? " ShrinkOnSmallScreen " : " ExpandOnSmallScreen ") + " h-full lg:min-w-[210px] absolute top-0 left-0 bg-white pt-[65px] z-[100] overflow-hidden border-r border-gray-200 transition-all shadow-lg lg:shadow-md overflow-x-hidden"}>
@@ -94,7 +94,7 @@ export const SideNav = ({ }: SideNavProps) => {
                      {/* <Icon path={mdiArrowRight} size={0.8} className="absolute top-[30%] -left-[6px]"></Icon> */}
                   </Button>
 
-                  {NavLinks?.categories.map((link, i) => {
+                  {NavLinks?.map((link, i) => {
                      const slug = link.title.toLowerCase().split(' ').join('-')
                      return (
 
