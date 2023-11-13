@@ -1,4 +1,6 @@
 'use client';
+// import { http, HttpResponse } from 'msw'
+import Pretender from 'pretender';
 
 import './globals.css'
 import '../loaders/main.css'
@@ -9,11 +11,18 @@ import { StoreProvider } from '@/redux/provider'
 import { SideNav, TopNav } from './components/navs'
 import { useRouter, usePathname } from 'next/navigation'
 
+import { mockApi } from '@/mock-api'; // Import MirageJS setup
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Reni Store',
   description: 'Reni Store',
+}
+
+// Start the Mirage server
+if (process.env.NODE_ENV === 'development') {
+  mockApi();
 }
 
 export default function RootLayout({

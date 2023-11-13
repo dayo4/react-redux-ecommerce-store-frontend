@@ -55,15 +55,15 @@ export const SideNav = ({ }: SideNavProps) => {
    const { push } = useRouter()
    const pathname = usePathname()
 
-   const NavLinks = [
-      { title: "New Arrivals", href: "/categories/new-arrivals", icon: NewRealeasesIcon },
-      { title: "Clothing", href: "/categories/clothing", icon: ClothingIcon },
-      { title: "Shoes", href: "/categories/shoes", icon: ShoesIcon },
-      { title: "Accessories", href: "/categories/accessories", icon: AccessoriesIcon },
-      { title: "Activewear", href: "/categories/activewear", icon: ActivewearIcon },
-      { title: "Gifts & Living", href: "/categories/gifts", icon: GiftsIcon },
-      { title: "Inspiration", href: "/categories/inspiration", icon: InspirationIcon },
-   ]
+   // const NavLinks = [
+   //    { title: "New Arrivals", href: "/categories/new-arrivals", icon: NewRealeasesIcon },
+   //    { title: "Clothing", href: "/categories/clothing", icon: ClothingIcon },
+   //    { title: "Shoes", href: "/categories/shoes", icon: ShoesIcon },
+   //    { title: "Accessories", href: "/categories/accessories", icon: AccessoriesIcon },
+   //    { title: "Activewear", href: "/categories/activewear", icon: ActivewearIcon },
+   //    { title: "Gifts & Living", href: "/categories/gifts", icon: GiftsIcon },
+   //    { title: "Inspiration", href: "/categories/inspiration", icon: InspirationIcon },
+   // ]
 
    function handleSideNav() {
       if (nav.status && nav.isSmallScreen) {
@@ -74,8 +74,8 @@ export const SideNav = ({ }: SideNavProps) => {
       }
    }
 
-   const { data, isLoading, error } = useGetAllCategoriesQuery(null)
-   console.log(data)
+   const { data: NavLinks, isLoading, error } = useGetAllCategoriesQuery(null)
+   console.log(NavLinks)
 
    return (
       <aside className={(!nav.status ? " ShrinkOnSmallScreen " : " ExpandOnSmallScreen ") + " h-full lg:min-w-[210px] absolute top-0 left-0 bg-white pt-[65px] z-[100] overflow-hidden border-r border-gray-200 transition-all shadow-lg lg:shadow-md overflow-x-hidden"}>
@@ -94,11 +94,12 @@ export const SideNav = ({ }: SideNavProps) => {
                      {/* <Icon path={mdiArrowRight} size={0.8} className="absolute top-[30%] -left-[6px]"></Icon> */}
                   </Button>
 
-                  {NavLinks.map((link, i) => {
+                  {NavLinks?.categories.map((link, i) => {
+                     const slug = link.title.toLowerCase().split(' ').join('-')
                      return (
 
-                        <Button variant="text" className={(pathname === link.href ? "text-my-pri-color border-l-2 border-l-my-pri-color " : "") + " block w-full mb-2 capitalize overflow-hidden relative"} key={i}>
-                           <Link href={{ pathname: link.href, query: { title: link.title } }} className={"flex pr-4 font-[600]"} >
+                        <Button variant="text" className={(pathname === "/categories/"+ slug ? "text-my-pri-color border-l-2 border-l-my-pri-color " : "") + " block w-full mb-2 capitalize overflow-hidden relative"} key={i}>
+                           <Link href={{ pathname: "/categories/" + slug, query: { title: link.title } }} className={"flex pr-4 font-[600]"} >
                               <Image src={link.icon} alt={link.title} className='mr-4' height={22} width={22}></Image>
                               <span className="mt-[3px]">{link.title}</span>
                            </Link>

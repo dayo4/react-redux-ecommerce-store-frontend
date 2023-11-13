@@ -7,12 +7,13 @@ export type ProductData = {
   price: string;
 };
 export type CategoryData = {
-  catid: number;
-  categorname: string;
+  id: number;
+  title: string;
+  icon: string;
 };
 
 export const productApi = createApi({
-  reducerPath: "productwaApi",
+  reducerPath: "productApi",
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
@@ -21,7 +22,7 @@ export const productApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getAllCategories: builder.query<CategoryData[], null>({
+    getAllCategories: builder.query<{categories:CategoryData[]}, null>({
       query: () => ({
         url: "/getAllCategories",
         method: "POST",

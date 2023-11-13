@@ -1,0 +1,93 @@
+{
+    "getCategories": {
+        "requestBody": "None",
+        "response": {
+            "catid": "String",
+            "catname": "String",
+            "iconUrl": "String" /* You maybe have to edit the seller part to add this new property to category endpoints */
+        }
+    },
+    "getProductsByCategory": {
+        "requestBody": {
+            "catid": "String"
+        },
+        "response": {
+            "catid": "String",
+            "catname": "String",
+            "products": "Array of Products that belong to that category"
+        }
+    },
+    "getProductByToken": {
+        "requestBody": {
+            "productToken": "String"
+        },
+        "response": {
+            "product": "All product's properties, colors, sizes, token, rating, etc"
+        }
+    },
+    "syncCartToServer": {/* The frontend will send the cart to server when necessary. The backend replaces the previous data with new data*/
+        "requestBody": {
+            "userToken": "String",
+            "cart": [
+                {
+                    "producttoken": "String",
+                    "quantity": "Number",
+                    "anyOtherProperties": "Any"
+                },
+                {
+                    "producttoken": "String",
+                    "quantity": "Number",
+                    "anyOtherProperties": "Any"
+                }
+            ]
+        },
+        "response": {
+            "success": "Boolean"
+        }
+    },
+    "getCartItems": {/* The frontend calls the backend to get items when needed */
+        "requestBody": {
+            "userToken": "String"
+        },
+        "response": {
+            "cart": [
+                {
+                    "product": {
+                        "name": "String",
+                        "price": "String",
+                        "Image": "String with one main image url"
+                    },
+                    "quantity": "Number",
+                    "anyOtherProperties": "Any"
+                },
+                {
+                    "product": {
+                        "name": "String",
+                        "price": "String",
+                        "Image": "String with one main image url"
+                    },
+                    "quantity": "Number",
+                    "anyOtherProperties": "Any"
+                }
+            ]
+        }
+    },
+    "getNewReleases": {
+        "requestBody": "None",
+        "response": {
+            "products": "Array of Products that belong to that category"
+        }
+    },
+    "getTopDeals": {
+        "requestBody": "None",
+        "response": {
+            "products": "Array of Products that belong to that category"
+        }
+    },
+    "getTopRated": {
+        "requestBody": "None",
+        "response": {
+            "products": "Array of Products that belong to that category"
+        }
+    }
+}
